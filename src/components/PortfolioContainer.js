@@ -31,7 +31,7 @@ class PortfolioContainer extends Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:3000/')
+        fetch('https://crypto-calculator-copy.herokuapp.com')
         .then(res => res.json())
         .then(fetchedStuff => {
 
@@ -42,7 +42,7 @@ class PortfolioContainer extends Component {
         }
 
     componentDidUpdate() {
-        fetch('http://localhost:3000/users/')
+        fetch('https://crypto-calculator-copy.herokuapp.com/users')
         .then(res => res.json())
         .then(data => {
           this.setState({ 
@@ -56,7 +56,7 @@ class PortfolioContainer extends Component {
             const id = e.target.getAttribute('data-id')
             const activeCurrency = this.state.search_results.filter( item => item.id  == parseInt(id))
     
-            fetch('http://localhost:3000/users/1', {
+            fetch('https://crypto-calculator-copy.herokuapp.com/users/1', {
         
                 method: 'PATCH',
                 headers: {
@@ -85,7 +85,7 @@ class PortfolioContainer extends Component {
             const id = this.props.item.currency.id
             //const amount = this.props.item.amount
             
-            fetch(`http://localhost:3000/currencies/${id}`, {
+            fetch(`https://crypto-calculator-copy.herokuapp.com/currencies/${id}`, {
             method: 'DELETE',
             // body:  JSON.stringify({
             //   name: [],
@@ -105,7 +105,7 @@ class PortfolioContainer extends Component {
 
 
     handleChange(e) {
-        fetch('http://localhost:3000/search', {
+        fetch('https://crypto-calculator-copy.herokuapp.com/search', {
     
             method: 'POST',
             headers: {
@@ -177,7 +177,7 @@ class PortfolioContainer extends Component {
         let amount = this.state.amount
        
 
-        fetch('http://localhost:3000/calculate', {
+        fetch('https://crypto-calculator-copy.herokuapp.com/calculate', {
     
                 method: 'POST',
                 headers: {
