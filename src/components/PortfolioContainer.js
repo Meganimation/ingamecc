@@ -239,7 +239,7 @@ handleAmount(e){
            </div>
           
            <div className="right">
-           <UserContainer user={this.state.user} />
+     
            <Portfolio portfolio={this.state.portfolio} />
       
            

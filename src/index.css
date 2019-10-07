@@ -2,9 +2,9 @@
  body{
    
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
-  margin:50px;
+  margin:0px;
     
-      background: url('https://i.gifer.com/7vLl.gif');
+      background: url('https://i.pinimg.com/originals/5f/ee/8e/5fee8e4a9fea271529cfd8828dd990d5.gif');
     }
 
     .header-one{
@@ -22,7 +22,7 @@
   display: grid;
   
   grid-template-columns: 310px;
-  grid-template-rows: 1fr;
+  grid-template-rows: 100%;
   height: 1vh;
 }
 
@@ -30,7 +30,7 @@
   background: url('https://i.pinimg.com/originals/5f/ee/8e/5fee8e4a9fea271529cfd8828dd990d5.gif');
 
 
-    position: -webkit-sticky; /* Fixed Sidebar (stay in place on scroll) */
+    position: unset; /* Fixed Sidebar (stay in place on scroll) */
     z-index: 0; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
@@ -39,7 +39,7 @@
    
     background: url('https://i.pinimg.com/originals/5f/ee/8e/5fee8e4a9fea271529cfd8828dd990d5.gif');
   
-    padding:330%;
+    padding:130%;
    
     border: #ffffff;
 
@@ -63,6 +63,7 @@
   z-index: 1; /* Stay on top */
 
   right: 1;
+  top: 0;
   background: #213c501f;
   float: right;
   
@@ -192,6 +193,7 @@
 
 
 .flip-card {
+
   
   background-color: transparent;
   width: 320px;
