@@ -36,9 +36,9 @@ render(){
    
     return (
         <div>
-        <div className="headerr"> Hello  {this.props.name.name}!                   
+        <div className="headerr">                 
         <br /> 
-        <small onClick={this.doSomething}>Not you?</small>
+        <small onClick={this.doSomething}></small>
         </div></div>
         // <div>tf {this.props.name}</div>
 

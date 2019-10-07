@@ -30,7 +30,7 @@
   background: url('https://i.pinimg.com/originals/5f/ee/8e/5fee8e4a9fea271529cfd8828dd990d5.gif');
 
 
-    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    position: -webkit-sticky; /* Fixed Sidebar (stay in place on scroll) */
     z-index: 0; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
@@ -39,7 +39,7 @@
    
     background: url('https://i.pinimg.com/originals/5f/ee/8e/5fee8e4a9fea271529cfd8828dd990d5.gif');
   
-    padding:330px;
+    padding:330%;
    
     border: #ffffff;
 
