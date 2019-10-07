@@ -1,6 +1,5 @@
 {
   "name": "ingamecc",
-  
   "engines": {
     "node": "12.10.0",
     "npm": "6.11.3"
