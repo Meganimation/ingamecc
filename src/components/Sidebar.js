@@ -23,7 +23,7 @@ testy() {
 
 
         componentDidMount() {
-            fetch('http://localhost:3000/games/')
+            fetch('https://crypto-calculator-copy.herokuapp.com/games')
             .then(res => res.json())
             .then(data => {
               this.setState({ 
@@ -34,7 +34,7 @@ testy() {
 
 
             componentDidUpdate() {
-                fetch('http://localhost:3000/stores/')
+                fetch('https://crypto-calculator-copy.herokuapp.com/stores')
                 .then(res => res.json())
                 .then(dataa => {
                   this.setState({ 
