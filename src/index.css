@@ -229,8 +229,8 @@
   background-color: rgba(132, 0, 255, 0.164);
   box-shadow: 5px 2px 5px 0 rgba(185, 3, 3, 0.082) inset, -25px -25px 50px 0 rgba(47, 1, 58, 0.336) inset; 
   opacity: 50%;
-  color: rgba(255, 255, 255, 0.452)55, 255, 255);
-}
+  color: rgba(255, 255, 255, 0.452);}
+
 
 /* Style the back side */
 .flip-card-back { 
@@ -306,8 +306,5 @@ body{
 }
 .content{
     width: 30px;
-
-}
-.test-img{
 
 }
