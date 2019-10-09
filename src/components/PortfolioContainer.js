@@ -11,7 +11,6 @@ class PortfolioContainer extends Component {
 
     constructor(props) {
         super(props)
-
         this.state = {
 
             portfolio: [],
@@ -24,24 +23,19 @@ class PortfolioContainer extends Component {
         this.handleChange = this.handleChange.bind(this) 
         this.handleSelect = this.handleSelect.bind(this) 
         this.handleSubmit = this.handleSubmit.bind(this) 
-        this.handleAmount = this.handleAmount.bind(this) 
-        this.handleClicko = this.handleClicko.bind(this) 
-
-        
+        this.handleAmount = this.handleAmount.bind(this)         
     }
 
-    componentDidMount() {
+  componentDidMount() {
         fetch('https://crypto-calculator-copy.herokuapp.com')
         .then(res => res.json())
         .then(fetchedStuff => {
-
           console.log(fetchedStuff)
-  
-    
         })
         }
+        
 
-    componentDidUpdate() {
+  componentDidUpdate() {
         fetch('https://crypto-calculator-copy.herokuapp.com/users')
         .then(res => res.json())
         .then(data => {
@@ -50,7 +44,7 @@ class PortfolioContainer extends Component {
         })
         }
 
-        handleSelect(e){
+  handleSelect(e){
 
             e.preventDefault()
             const id = e.target.getAttribute('data-id')
@@ -70,138 +64,71 @@ class PortfolioContainer extends Component {
               })
               .then(res => res.json())
               .then( (data) => {
-                 
-                    this.setState({
-                        
+                    this.setState({   
                         active_currency: activeCurrency[0],
                         search_results: []
-    
                     })
-    
-        })}
-
-        handleClicko = () => {
-
-            const id = this.props.item.currency.id
-            //const amount = this.props.item.amount
-            
-            fetch(`https://crypto-calculator-copy.herokuapp.com/currencies/${id}`, {
-            method: 'DELETE',
-            // body:  JSON.stringify({
-            //   name: [],
-            //   amount: this.props.item.amount
-            // })
-            })
-            .then(resp => resp.json)
-            .then(data => {
-              debugger
-              this.setState({ 
-                portfolio: []
-              }
-              )
-              //add delete to the same place the state is?
-              console.log(this.state.name)})}
+        })
+      }
 
 
 
-    handleChange(e) {
-        fetch('https://crypto-calculator-copy.herokuapp.com/search', {
-    
+  handleChange(e) {
+        fetch('https://crypto-calculator-copy.herokuapp.com/search', {  
             method: 'POST',
             headers: {
-              'Content-Type': 'application/json'
-         
-            },
-            
+              'Content-Type': 'application/json'      
+            },          
             body: JSON.stringify({
-                search: e.target.value 
-                
+                search: e.target.value              
             })
           })
           .then(res => res.json())
-            .then( (data) => {
-             
-                this.setState({
-                    
+          .then( (data) => {           
+                this.setState({                
                     search_results: [...data.currencies]
-
-                })
-     
-    
-    })}
-
-    // handleGameChange(e) {
-    //     fetch('http://localhost:3000/searchz', {
-    
-    //         method: 'POST',
-    //         headers: {
-    //           'Content-Type': 'application/json'
-         
-    //         },
-            
-    //         body: JSON.stringify({
-    //             search: e.target.value 
-                
-    //         })
-    //       })
-    //       .then(res => res.json())
-    //         .then( (data) => {
-             
-    //             this.setState({
-                    
-    //                 game_results: [...data.games]
-
-    //             })
-     
-    
-    // })}
-
-
+               })     
+            }
+       )
+  }
    
 
-    handleSelect(e){
+  handleSelect(e){
         e.preventDefault()
         const id = e.target.getAttribute('data-id')
         const activeCurrency = this.state.search_results.filter( item => item.id  == parseInt(id))
         this.setState({
             active_currency: activeCurrency[0],
             search_results: []
-        })
-       
+        }
+      )    
     }
 
 
-    handleSubmit(e){
+  handleSubmit(e){
         e.preventDefault()
         let currency = this.state.active_currency
         let amount = this.state.amount
-       
-
         fetch('https://crypto-calculator-copy.herokuapp.com/calculate', {
-    
                 method: 'POST',
                 headers: {
-                  'Content-Type': 'application/json',
-             
-                },
-                
+                  'Content-Type': 'application/json',          
+                },             
         body: JSON.stringify({
             id: currency.id,
             amount: amount
         })
-    })
-        
+    })     
         .then(res => res.json())
-        .then( (data) => {
-     
+        .then( (data) => {  
             console.log(data)
             this.setState({
             amount: amount,
             active_currency: null,
             portfolio: [...this.state.portfolio, data]
-
-            })
-        })}
+          })
+        })
+      }
 
 
 
@@ -215,34 +142,26 @@ handleAmount(e){
 
 
   render(){
-
-    const searchOrCalculate = this.state.active_currency ? 
+      const searchOrCalculate = this.state.active_currency ? 
     <Calculate
-    handleChange={this.handleAmount}
-    handleSubmit={this.handleSubmit}
-    active_currency={this.state.active_currency}
-    amount={this.state.amount}/> :
+      handleChange={this.handleAmount}
+      handleSubmit={this.handleSubmit}
+      active_currency={this.state.active_currency}
+      amount={this.state.amount}/> :
     <Search 
-    handleSelect={this.handleSelect} 
-    searchResults={this.state.search_results}
-    handleChange={this.handleChange}/>
+      handleSelect={this.handleSelect} 
+      searchResults={this.state.search_results}
+      handleChange={this.handleChange}/>
 
 
 
     return(
         <div className="grid">
-          
-             <div className="left">
-        
-           
+        <div className="left">
            {searchOrCalculate}
-           </div>
-          
-           <div className="right">
-     
-           <Portfolio portfolio={this.state.portfolio} />
-      
-           
+           </div>   
+           <div className="right">    
+           <Portfolio portfolio={this.state.portfolio} />     
         </div>
         </div>
     )
