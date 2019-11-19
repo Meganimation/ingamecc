@@ -3,15 +3,13 @@ import Game from './Game'
 
 
 export default class Sidebar extends Component {    
-    constructor(props) {
-        super(props)
-        this.state = {
+ state = {
             name: [],
             location: '',
             currency: [],
             game: [],
             store: []
-        }}
+        }
 
 // testy() {
 //     return console.log('it worked!')

@@ -1,15 +1,12 @@
 import React, { Component } from 'react'
 
 class PortfolioItem extends Component {
-    constructor(props){
-    super (props)
 
-    this.state = {
+    state = {
 
       name: [],
       amount: [],
       portfolio: []
-     
 }
 }
 
@@ -87,6 +84,6 @@ render()
       </div>   
     )
   }
-}
+
 
 export default PortfolioItem
