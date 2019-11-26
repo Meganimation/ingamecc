@@ -7,7 +7,7 @@ Deployed at:
 <a href='https://morning-crag-16734.herokuapp.com/'> heroku </a>
 </br>
 </br>
-Front-end can be found<a href='https://github.com/Meganimation/inGameCurrencyConverterBACKEND/'> here. </a> 
+Back-end can be found<a href='https://github.com/Meganimation/inGameCurrencyConverterBACKEND/'> here. </a> 
 </br>
 </br>
 <h2> How to Install and View... </h2>
